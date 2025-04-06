@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- Created By Mihai Lungu-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../logotip.png">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Temple Woods Construction</title>
+    <style>
+      html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer {
+    background: rgba(79,95,110,1);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+        i{
+            color:black;
+        }
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .logo img {
+            height: 70px;
+        }
+        .contact-info {
+            align-self: center;
+            align-content: center;
+            justify-content: center;
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .cerc {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            color: #007bff;
+            font-size: 18px;
+            
+        }
+        .navigare {
+            background-color: rgba(79,95,110,1);
+            color: white;
+            padding: 10px 0;
+        }
+        .nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-menu li {
+            margin: 5px 10px;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        .partners-container {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(79,95,110,1);
+    padding: 10px 0;
+}
+
+.partners-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.partners {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite; /* Controlăm viteza */
+}
+
+.partners img {
+    height: 60px;
+    margin: 0 15px;
+    
+}
+
+/* Animație infinită fără oprire */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    min-width: 300px;
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea {
+    height: 100px;
+}
+button {
+    background: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+.link{
+    padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="contact-info" >
+        <div class="logo">
+            <img src="../logotip.png" alt="Temple Woods Construction Logo" onclick="window.location.href='../'" style="cursor: pointer;"> <!--Click go to home-->
+        </div>
+       
+            <div class="contact-item" onclick="window.location.href='tel:+353852303610'">
+                <div class="cerc">
+                    <span>&#9742;</span>
+                </div>
+                <div>
+                    <span>Phone:</span>
+                    <p>(+353) 852303610</p>
+                </div>
+            </div>
+            <div class="contact-item" onclick="window.location.href='mailto:templewoods2@gmail.com'">
+                <div class="cerc">
+                    <span>&#9993;</span>
+                </div>
+                <div>
+                    <span>EMAIL:</span>
+                    <p>templewoods2@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item" onclick="window.location.href='../faqs/'">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+                      </svg>
+                </div>
+                <div>
+                    <span>FAQs</span>
+                    
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                      </svg>
+                </div>
+                
+            </div>
+            <div class="contact-item" onclick="window.location.href='../contact-us/'">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                      </svg>
+                </div>
+                <div>
+                    <span>Contact Us</span>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="navigare">
+        <button class="menu-toggle">☰ Temple Woods Construction</button>
+        <ul class="nav-menu">
+            <li><a href="../">Home</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="../services/">Services</a></li>
+            <li><a href="">Helpful Information</a></li>
+            
+           
+        </ul>
+    </header>
+
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-menu").classList.toggle("active");
+        });
+    </script>
+    <div class="main-content">
+        <div class="container">
+            <h1>Helpful Information</h1>
+            <p>
+                <li class="link"><b><a href="https://greenoak.ie/renovating-irish-homes-eco-friendly-construction-techniques-greenoak/?utm_source=chatgpt.com">Greenoak Construction</a>:</b> Greenoak's blog features articles on eco-friendly construction techniques, renovation guides, and design inspiration. Their posts, such as "Renovating Irish Homes: Eco-Friendly Construction Techniques by Greenoak," highlight sustainable building practices in Ireland. </li>
+                <li class="link"><b><a href="https://ellisconstruction.ie/recent-blog/?utm_source=chatgpt.com">Ellis Construction</a>:</b> Ellis Construction's blog provides comprehensive guides and insights into various aspects of home renovation and construction. An example is their post titled "Home Renovation in Ireland: A Comprehensive Guide to Choosing the Right Contractor," which assists readers in making informed decisions about their renovation projects.</li>
+                <li class="link"><b><a href="https://www.ernevalleyconstruction.ie/blog?utm_source=chatgpt.com">Erne Valley Construction</a>:</b> Erne Valley Construction's blog showcases their project portfolio, highlighting past successes and ongoing ventures. Their posts, such as "Old House Transformation," offer insights into their renovation projects and the processes involved. </li>
+                <li class="link"><b><a href="https://www.renova.ie/blog/?utm_source=chatgpt.com">Renova</a>:</b> Renova's blog emphasizes the importance of project management in construction, providing articles like "The importance of good project management in construction projects," which discusses best practices and tips for successful project execution. </li>
+                <li class="link"><b><a href="https://mcdonaghconstruction.com/blog/?utm_source=chatgpt.com">McDonagh Construction</a>:</b> McDonagh Construction's blog features articles written by their construction team, offering up-to-date and helpful advice on various construction topics, addressing common questions, and providing insights into their expertise. </li>
+                <li class="link"><b><a href="https://aboveallgroup.ie/blog/?utm_source=chatgpt.com">Above All Group</a>:</b> Above All Group's blog, "Irish Construction News - Building Ireland," provides insights into Ireland's dynamic construction industry, keeping readers informed about the latest news and developments. </li>
+
+             
+             </p>
+        </div>
+     </div>
+
+
+
+
+    <script>
+        let wrapper = document.querySelector('.partners');
+let isPaused = false;
+
+function moveLeft() {
+    wrapper.style.animation = "none";
+    wrapper.style.transform = "translateX(100%)";
+    setTimeout(() => wrapper.style.animation = "scroll 10s linear infinite", 500);
+}
+
+function moveRight() {
+    wrapper.style.animation = "none";
+    wrapper.style.transform = "translateX(-100%)";
+    setTimeout(() => wrapper.style.animation = "scroll 10s linear infinite", 500);
+}
+
+// Oprește animația la hover
+wrapper.addEventListener("mouseenter", () => {
+    wrapper.style.animationPlayState = "paused";
+});
+wrapper.addEventListener("mouseleave", () => {
+    wrapper.style.animationPlayState = "running";
+});
+
+    </script>
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-2">
+                    <h2>Partners</h2> 
+                </div>
+            <div class="col-md-10">
+            <div class="partners-container">
+                <div class="partners-wrapper">
+                    <div class="partners">
+                        <img src="../partners/phoenix1.png" onclick="window.open('https://electriccarcharger.ie/phoenix-solar-systems-pv-panels/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/phoenix2.png" onclick="window.open('https://phoenixes.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ipages.png" onclick="window.open('https://irish-pages.ie/listing/ireland/trim/plumber/cr-plumbing-heating-services', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ffs.png" onclick="window.open('https://www.fastfloorscreed.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/brooks.jpg" onclick="window.open('https://brooksonline.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/core.jpg" onclick="window.open('https://corebuild.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/chadwicks.png" onclick="window.open('https://www.chadwicks.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/timberie.png" onclick="window.open('https://www.timberireland.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/dara.png" onclick="window.open('https://www.ncompass.ie/contact', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/hogan.png" onclick="window.open('https://pickapro.ie/structural-engineer/Hogan+And+Associates', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ambacht.jpg" onclick="window.open('https://www.ambacht.ie/93c2bff520-content', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/wurth.png" onclick="window.open('https://eshop.wurth.ie/en/GB/EUR/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ecological.png" onclick="window.open('https://www.ecologicalbuildingsystems.com/?srsltid=AfmBOoq0RtcU4hC145aeT62yW8Fllw_65n60yAfnzb3g19KRLbmHhmBV', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/adwanced.png" onclick="window.open(' https://advancedwaste.ie/', '_blank');" style="cursor: pointer;">
+                        <!-- Duplicăm pentru efect de continuitate -->
+                        <img src="../partners/phoenix1.png" onclick="window.open('https://electriccarcharger.ie/phoenix-solar-systems-pv-panels/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/phoenix2.png" onclick="window.open('https://phoenixes.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ipages.png" onclick="window.open('https://irish-pages.ie/listing/ireland/trim/plumber/cr-plumbing-heating-services', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ffs.png" onclick="window.open('https://www.fastfloorscreed.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/brooks.jpg" onclick="window.open('https://brooksonline.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/core.jpg" onclick="window.open('https://corebuild.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/chadwicks.png" onclick="window.open('https://www.chadwicks.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/timberie.png" onclick="window.open('https://www.timberireland.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/dara.png" onclick="window.open('https://www.ncompass.ie/contact', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/hogan.png" onclick="window.open('https://pickapro.ie/structural-engineer/Hogan+And+Associates', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ambacht.jpg" onclick="window.open('https://www.ambacht.ie/93c2bff520-content', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/wurth.png" onclick="window.open('https://eshop.wurth.ie/en/GB/EUR/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ecological.png" onclick="window.open('https://www.ecologicalbuildingsystems.com/?srsltid=AfmBOoq0RtcU4hC145aeT62yW8Fllw_65n60yAfnzb3g19KRLbmHhmBV', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/adwanced.png" onclick="window.open(' https://advancedwaste.ie/', '_blank');" style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+            <h4>&copy; 2025 Temple Woods Construction. All rights reserved.</h4>
+        </div>
+</body>
+<!-- Created By Mihai Lungu-->
+</html>

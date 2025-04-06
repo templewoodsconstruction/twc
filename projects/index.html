@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<!-- Created By Mihai Lungu-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../logotip.png">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Temple Woods Construction</title>
+    <style>
+      html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer {
+    background: rgba(79,95,110,1);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+        i{
+            color:black;
+        }
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .logo img {
+            height: 70px;
+        }
+        .contact-info {
+            align-self: center;
+            align-content: center;
+            justify-content: center;
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .cerc {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            color: #007bff;
+            font-size: 18px;
+            
+        }
+        .navigare {
+            background-color: rgba(79,95,110,1);
+            color: white;
+            padding: 10px 0;
+        }
+        .nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-menu li {
+            margin: 5px 10px;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        .partners-container {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(79,95,110,1);
+    padding: 10px 0;
+}
+
+.partners-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.partners {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite; /* Controlăm viteza */
+}
+
+.partners img {
+    height: 60px;
+    margin: 0 15px;
+    
+}
+
+/* Animație infinită fără oprire */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+
+.carousel-inner .item img {
+    display: block;
+    margin: auto;
+}
+
+.carousel-control{
+    width: 50px;
+    height: auto;
+    
+    
+   
+}
+
+
+hr {
+    border: none; /* Elimină stilul implicit */
+    height: 2px; /* Grosimea liniei */
+    background-color: rgba(79, 95, 110, 1); /* Culoarea liniei */
+    width: 100%; /* Lățimea (poți ajusta, ex. 50%) */
+   
+}
+.img-responsive{
+    width: 75%;
+    height: auto;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="contact-info" >
+        <div class="logo">
+            <img src="../logotip.png" alt="Temple Woods Construction Logo" onclick="window.location.href='../'" style="cursor: pointer;"> <!--Click go to home-->
+        </div>
+       
+            <div class="contact-item" onclick="window.location.href='tel:+353852303610'">
+                <div class="cerc">
+                    <span>&#9742;</span>
+                </div>
+                <div>
+                    <span>Phone:</span>
+                    <p>(+353) 852303610</p>
+                </div>
+            </div>
+            <div class="contact-item" onclick="window.location.href='mailto:templewoods2@gmail.com'">
+                <div class="cerc">
+                    <span>&#9993;</span>
+                </div>
+                <div>
+                    <span>EMAIL:</span>
+                    <p>templewoods2@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item" onclick="window.location.href='../faqs/'">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+                      </svg>
+                </div>
+                <div>
+                    <span>FAQs</span>
+                    
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                      </svg>
+                </div>
+                
+            </div>
+            <div class="contact-item" onclick="window.location.href='../contact-us'">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                      </svg>
+                </div>
+                <div>
+                    <span>Contact Us</span>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="navigare">
+        <button class="menu-toggle">☰ Temple Woods Construction</button>
+        <ul class="nav-menu">
+            <li><a href="../">Home</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="../services/">Services</a></li>
+            <li><a href="../helpful-information/">Helpful Information</a></li>
+            
+           
+        </ul>
+    </header>
+
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-menu").classList.toggle("active");
+        });
+    </script>
+    <div class="main-content">
+        <div class="container">
+            <h1 style="font-size: 45px;">Projects</h1>
+            <h1>Terenure</h1>
+            <div id="carousel-holder7" class="carousel slide" data-ride="carousel" 
+            style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+       
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-holder7" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-holder7" data-slide-to="1" class=""></li>
+              <li data-target="#carousel-holder7" data-slide-to="2" class=""></li>
+              <li data-target="#carousel-holder7" data-slide-to="3" class=""></li>
+              <li data-target="#carousel-holder7" data-slide-to="4" class=""></li>
+              <li data-target="#carousel-holder7" data-slide-to="5" class=""></li>
+              <li data-target="#carousel-holder7" data-slide-to="6" class=""></li>
+              
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="img-responsive" src="Terenure/01.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="Terenure/02.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="Terenure/03.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="Terenure/04.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="Terenure/05.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="Terenure/06.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="Terenure/07.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              
+            </div>
+            <a class="left carousel-control" href="#carousel-holder7" data-slide="prev">
+                
+              </a>
+              <a class="right carousel-control" href="#carousel-holder7" data-slide="next">
+                
+              </a>
+            
+            </a>
+          </div>
+          <hr>
+
+          <h1>St Brigeds Rd</h1>
+          <div id="carousel-holder6" class="carousel slide" data-ride="carousel" 
+          style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+     
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-holder6" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-holder6" data-slide-to="1" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="2" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="3" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="4" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="5" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="6" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="7" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="8" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="9" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="10" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="11" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="12" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="13" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="14" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="15" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="16" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="17" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="18" class=""></li>
+            <li data-target="#carousel-holder6" data-slide-to="19" class=""></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <img class="img-responsive" src="St_Brigeds_Rd/01.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/02.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/03.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/04.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/05.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/06.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/07.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/08.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/09.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/10.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/11.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/12.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/13.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/14.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/15.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/16.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/17.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/18.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/19.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img class="img-responsive" src="St_Brigeds_Rd/20.jpg">
+              <div class="carousel-caption">
+              </div>
+            </div>
+          </div>
+          <a class="left carousel-control" href="#carousel-holder6" data-slide="prev">
+              
+            </a>
+            <a class="right carousel-control" href="#carousel-holder6" data-slide="next">
+              
+            </a>
+          
+          </a>
+        </div>
+        <hr>
+
+        <h1>Mulvey Park</h1>
+        <div id="carousel-holder5" class="carousel slide" data-ride="carousel" 
+        style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+   
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-holder5" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-holder5" data-slide-to="1" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="2" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="3" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="4" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="5" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="6" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="7" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="8" class=""></li>
+          <li data-target="#carousel-holder5" data-slide-to="9" class=""></li>
+         
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img class="img-responsive" src="Mulvey_Park/01.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/02.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/03.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/04.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/05.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/06.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/07.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/08.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/09.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <img class="img-responsive" src="Mulvey_Park/10.jpg">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        
+        </div>
+        <a class="left carousel-control" href="#carousel-holder5" data-slide="prev">
+            
+          </a>
+          <a class="right carousel-control" href="#carousel-holder5" data-slide="next">
+            
+          </a>
+        
+        </a>
+      </div>
+      <hr>
+
+      <h1>Hyde Park</h1>
+      <div id="carousel-holder4" class="carousel slide" data-ride="carousel" 
+      style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+ 
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-holder4" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-holder4" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="2" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="3" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="4" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="5" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="6" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="7" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="8" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="9" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="10" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="11" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="12" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="13" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="14" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="15" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="16" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="17" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="18" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="19" class=""></li>
+        <li data-target="#carousel-holder4" data-slide-to="20" class=""></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img class="img-responsive" src="Hyde_Park/01.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/02.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/03.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/04.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/05.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/06.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/07.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/08.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/09.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/10.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/11.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/12.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/13.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/14.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/15.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/16.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/17.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/18.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/19.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/20.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img class="img-responsive" src="Hyde_Park/21.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-holder4" data-slide="prev">
+          
+        </a>
+        <a class="right carousel-control" href="#carousel-holder4" data-slide="next">
+          
+        </a>
+      
+      </a>
+    </div>
+    <hr>
+
+            <h1>Ludford</h1>
+            <div id="carousel-holder1" class="carousel slide" data-ride="carousel" 
+            style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+       
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-holder1" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-holder1" data-slide-to="1" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="2" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="3" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="4" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="5" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="6" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="7" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="8" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="9" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="10" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="11" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="12" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="13" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="14" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="15" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="16" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="17" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="18" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_8fe8f52a73b04fa9bcac5996e6998209~mv2.jpg/v1/fill/w_247,h_185,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/c7c3ab_8fe8f52a73b04fa9bcac5996e6998209~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_5966916fa7154bfda39c56cde16b1814~mv2.jpg/v1/fill/w_576,h_432,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/c7c3ab_5966916fa7154bfda39c56cde16b1814~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_993bddb14916456e8e35c2ec6f7b5aae~mv2.jpg/v1/fill/w_573,h_382,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/c7c3ab_993bddb14916456e8e35c2ec6f7b5aae~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_ff8fbac76f434128b5bc44b412dd4cb8~mv2.jpg/v1/fill/w_250,h_376,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/c7c3ab_ff8fbac76f434128b5bc44b412dd4cb8~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_39115219a83145f7bac279c819edf0a4~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_39115219a83145f7bac279c819edf0a4~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_cb31fbd314d54e9f8872e8afd301dd87~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_cb31fbd314d54e9f8872e8afd301dd87~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_5e57e8e75a6b435fa51e31f62fee34a4~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_5e57e8e75a6b435fa51e31f62fee34a4~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_4e5587f942f94d069207e04bd40677ec~mv2.jpg/v1/fill/w_850,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_4e5587f942f94d069207e04bd40677ec~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_663ead72c96b4b40bac07909fa595ded~mv2.jpg/v1/fill/w_637,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_663ead72c96b4b40bac07909fa595ded~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_dee246aa9af84b53b0d46af878033658~mv2.jpg/v1/fill/w_1133,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_dee246aa9af84b53b0d46af878033658~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_d2bc835d7c4d4302833d019c30a2ee17~mv2.jpg/v1/fill/w_1133,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_d2bc835d7c4d4302833d019c30a2ee17~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_c26ec87b43124bd7a4370131b36a77fc~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_c26ec87b43124bd7a4370131b36a77fc~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_7c6fa00f6f9846369822e4a4c0fd1b78~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_7c6fa00f6f9846369822e4a4c0fd1b78~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_0c2716f3126e46e59ec91fd25b780e0b~mv2.jpg/v1/fill/w_1132,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_0c2716f3126e46e59ec91fd25b780e0b~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_27d7bcb72dac4610a6ba7ff09674b9eb~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_27d7bcb72dac4610a6ba7ff09674b9eb~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_c0edc409965b4d7895c2fcd3dbc17c5f~mv2.jpg/v1/fill/w_1133,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_c0edc409965b4d7895c2fcd3dbc17c5f~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_afc3d0ae6e284f2e9df44cc5a0075b8a~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_afc3d0ae6e284f2e9df44cc5a0075b8a~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_4cbca16369bd431ea1117dd69e0d1b89~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_4cbca16369bd431ea1117dd69e0d1b89~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_e8b1e1b738f4402d95d7672c8f5897b2~mv2.jpg/v1/fill/w_1132,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_e8b1e1b738f4402d95d7672c8f5897b2~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-holder1" data-slide="prev">
+                
+              </a>
+              <a class="right carousel-control" href="#carousel-holder1" data-slide="next">
+                
+              </a>
+            
+            </a>
+          </div>
+          <hr >
+          <br>
+            <h1>
+                Strand Road</h1>
+                
+            <div id="carousel-holder2" class="carousel slide" data-ride="carousel" 
+            style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+       
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-holder2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-holder2" data-slide-to="1" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="2" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="3" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="4" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="5" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="6" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="7" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="8" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="9" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="10" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="11" class=""></li>
+              <li data-target="#carousel-holder2" data-slide-to="12" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_76eafa9141cb45be99c83c45c98553e3~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_76eafa9141cb45be99c83c45c98553e3~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_fffb272b10aa48899c58bcb7949e4b1c~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_fffb272b10aa48899c58bcb7949e4b1c~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_38cfb46c8c704095982857e10a81f055~mv2.jpg/v1/fill/w_1063,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_38cfb46c8c704095982857e10a81f055~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_e4c45591758a4db497cf1f570bb0aaca~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_e4c45591758a4db497cf1f570bb0aaca~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_f3d6f69e6dde487398e782ce0b1dd102~mv2.jpg/v1/fill/w_1061,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_f3d6f69e6dde487398e782ce0b1dd102~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_e91164f84c92495191d3cb4dd2ede754~mv2.jpg/v1/fill/w_567,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_e91164f84c92495191d3cb4dd2ede754~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_73a68c1d8d11486baaf35d8bb78db744~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_73a68c1d8d11486baaf35d8bb78db744~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_c47d99565579421b97140c57fa7031e4~mv2.jpg/v1/fill/w_637,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_c47d99565579421b97140c57fa7031e4~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_1e4c243e620449af822b577f0d7aefba~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_1e4c243e620449af822b577f0d7aefba~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_9e00a607fe424c209f62a98d723d5b0b~mv2.jpg/v1/fill/w_1132,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_9e00a607fe424c209f62a98d723d5b0b~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_b4c012aa055e462593d3c9c510ccd3f6~mv2.jpg/v1/fill/w_1062,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_b4c012aa055e462593d3c9c510ccd3f6~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_62fe960f34cc419ca5c32128cf2940d5~mv2.jpg/v1/fill/w_1132,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_62fe960f34cc419ca5c32128cf2940d5~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_84a96148b094475e99b0bd21aed2219e~mv2.jpg/v1/fill/w_1132,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_84a96148b094475e99b0bd21aed2219e~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-holder2" data-slide="prev">
+                
+              </a>
+              <a class="right carousel-control" href="#carousel-holder2" data-slide="next">
+                
+              </a>
+            
+            </a>
+          </div>
+          <hr>
+<br>
+<h1>
+    Bushy Park</h1>
+            <div id="carousel-holder3" class="carousel slide" data-ride="carousel" 
+            style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+       
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-holder3" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-holder3" data-slide-to="1" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="2" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="3" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="4" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="5" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="6" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="7" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="8" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="9" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="10" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="11" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="12" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="13" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="14" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="15" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="16" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="17" class=""></li>
+              <li data-target="#carousel-holder3" data-slide-to="18" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_dae74d3d6cb84a32a998768572615c2f~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_dae74d3d6cb84a32a998768572615c2f~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_5ff3ee55f72b4f8ab56f22656cd1eb16~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_5ff3ee55f72b4f8ab56f22656cd1eb16~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_141f6d53ce444456ac8aea4bcf5468fc~mv2.jpg/v1/fill/w_637,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_141f6d53ce444456ac8aea4bcf5468fc~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_27b129c9b993452ab96765ae87bb21cb~mv2.jpg/v1/fill/w_391,h_486,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/c7c3ab_27b129c9b993452ab96765ae87bb21cb~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_481d4274378941db922a864d49223ed7~mv2.jpg/v1/fill/w_456,h_333,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/c7c3ab_481d4274378941db922a864d49223ed7~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_9c5924222daf40578b38b41012e5b655~mv2.jpg/v1/fill/w_637,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_9c5924222daf40578b38b41012e5b655~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_6cff65ff39184d57bfd12a1d75b124d4~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_6cff65ff39184d57bfd12a1d75b124d4~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_68fbaef2d75142f7932b2ad1d72e93eb~mv2.jpg/v1/fill/w_637,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_68fbaef2d75142f7932b2ad1d72e93eb~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_7f76a184df1f49b69375b15676f69a04~mv2.jpg/v1/fill/w_1132,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_7f76a184df1f49b69375b15676f69a04~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_e507679d4ea44d02af220d9fd362a42f~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_e507679d4ea44d02af220d9fd362a42f~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_40ec8d9efe0c46d9ae911d9c641dcb62~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_40ec8d9efe0c46d9ae911d9c641dcb62~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_4a53bacb66de45869b0bd8034722fe14~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_4a53bacb66de45869b0bd8034722fe14~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_75e8cae484654f8b867d8132f69af8a8~mv2.jpg/v1/fill/w_907,h_680,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_75e8cae484654f8b867d8132f69af8a8~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_c9c1cd88afe247258a8503f53e8b6161~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_c9c1cd88afe247258a8503f53e8b6161~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_7db11de216594a839674b9736e91f8ae~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_7db11de216594a839674b9736e91f8ae~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_518fc6216cba4876a834d8269bd1c663~mv2.jpg/v1/fill/w_1132,h_849,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_518fc6216cba4876a834d8269bd1c663~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_17f65d14a478442b8ffb0429cedb7cf8~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_17f65d14a478442b8ffb0429cedb7cf8~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_9c9d877621154f86b59202b3f5360aa3~mv2.jpg/v1/fill/w_1133,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_9c9d877621154f86b59202b3f5360aa3~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="https://static.wixstatic.com/media/c7c3ab_9177f5c6164b4ef8b81cf2b96340b86b~mv2.jpg/v1/fill/w_637,h_850,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/c7c3ab_9177f5c6164b4ef8b81cf2b96340b86b~mv2.jpg">
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-holder3" data-slide="prev">
+                
+              </a>
+              <a class="right carousel-control" href="#carousel-holder3" data-slide="next">
+                
+              </a>
+            
+            </a>
+          </div>
+          <hr>
+          <br>
+
+          <!--
+          <h1>Ludford</h1>
+            <div id="carousel-holder1" class="carousel slide" data-ride="carousel" 
+            style="margin-top: 20px; width: 85%; margin-left: auto; margin-right: auto; display: block;">
+       
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-holder1" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-holder1" data-slide-to="1" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="2" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="3" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="4" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="5" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="6" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="7" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="8" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="9" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="10" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="11" class=""></li>
+              <li data-target="#carousel-holder1" data-slide-to="12" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="item">
+                <img class="img-responsive" src="">
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-holder1" data-slide="prev">
+                
+              </a>
+              <a class="right carousel-control" href="#carousel-holder1" data-slide="next">
+                
+              </a>
+            
+            </a>
+          </div>
+          
+          -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+
+
+
+
+
+
+    <script>
+        let wrapper = document.querySelector('.partners');
+let isPaused = false;
+
+function moveLeft() {
+    wrapper.style.animation = "none";
+    wrapper.style.transform = "translateX(100%)";
+    setTimeout(() => wrapper.style.animation = "scroll 10s linear infinite", 500);
+}
+
+function moveRight() {
+    wrapper.style.animation = "none";
+    wrapper.style.transform = "translateX(-100%)";
+    setTimeout(() => wrapper.style.animation = "scroll 10s linear infinite", 500);
+}
+
+// Oprește animația la hover
+wrapper.addEventListener("mouseenter", () => {
+    wrapper.style.animationPlayState = "paused";
+});
+wrapper.addEventListener("mouseleave", () => {
+    wrapper.style.animationPlayState = "running";
+});
+
+    </script>
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-2">
+                    <h2>Partners</h2> 
+                </div>
+            <div class="col-md-10">
+            <div class="partners-container">
+                <div class="partners-wrapper">
+                    <div class="partners">
+                        <img src="../partners/phoenix1.png" onclick="window.open('https://electriccarcharger.ie/phoenix-solar-systems-pv-panels/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/phoenix2.png" onclick="window.open('https://phoenixes.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ipages.png" onclick="window.open('https://irish-pages.ie/listing/ireland/trim/plumber/cr-plumbing-heating-services', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ffs.png" onclick="window.open('https://www.fastfloorscreed.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/brooks.jpg" onclick="window.open('https://brooksonline.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/core.jpg" onclick="window.open('https://corebuild.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/chadwicks.png" onclick="window.open('https://www.chadwicks.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/timberie.png" onclick="window.open('https://www.timberireland.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/dara.png" onclick="window.open('https://www.ncompass.ie/contact', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/hogan.png" onclick="window.open('https://pickapro.ie/structural-engineer/Hogan+And+Associates', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ambacht.jpg" onclick="window.open('https://www.ambacht.ie/93c2bff520-content', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/wurth.png" onclick="window.open('https://eshop.wurth.ie/en/GB/EUR/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ecological.png" onclick="window.open('https://www.ecologicalbuildingsystems.com/?srsltid=AfmBOoq0RtcU4hC145aeT62yW8Fllw_65n60yAfnzb3g19KRLbmHhmBV', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/adwanced.png" onclick="window.open(' https://advancedwaste.ie/', '_blank');" style="cursor: pointer;">
+                        <!-- Duplicăm pentru efect de continuitate -->
+                        <img src="../partners/phoenix1.png" onclick="window.open('https://electriccarcharger.ie/phoenix-solar-systems-pv-panels/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/phoenix2.png" onclick="window.open('https://phoenixes.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ipages.png" onclick="window.open('https://irish-pages.ie/listing/ireland/trim/plumber/cr-plumbing-heating-services', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ffs.png" onclick="window.open('https://www.fastfloorscreed.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/brooks.jpg" onclick="window.open('https://brooksonline.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/core.jpg" onclick="window.open('https://corebuild.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/chadwicks.png" onclick="window.open('https://www.chadwicks.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/timberie.png" onclick="window.open('https://www.timberireland.ie/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/dara.png" onclick="window.open('https://www.ncompass.ie/contact', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/hogan.png" onclick="window.open('https://pickapro.ie/structural-engineer/Hogan+And+Associates', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ambacht.jpg" onclick="window.open('https://www.ambacht.ie/93c2bff520-content', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/wurth.png" onclick="window.open('https://eshop.wurth.ie/en/GB/EUR/', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/ecological.png" onclick="window.open('https://www.ecologicalbuildingsystems.com/?srsltid=AfmBOoq0RtcU4hC145aeT62yW8Fllw_65n60yAfnzb3g19KRLbmHhmBV', '_blank');" style="cursor: pointer;">
+                        <img src="../partners/adwanced.png" onclick="window.open(' https://advancedwaste.ie/', '_blank');" style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+            <h4>&copy; 2025 Temple Woods Construction. All rights reserved.</h4>
+        </div>
+</body>
+<!-- Created By Mihai Lungu-->
+</html>

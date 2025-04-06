@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!-- Created By Mihai Lungu-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="../logotip.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Temple Woods Construction</title>
+    <style>
+      html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer {
+    background: rgba(79,95,110,1);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+        i{
+            color:black;
+        }
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .logo img {
+            height: 70px;
+        }
+        .contact-info {
+            align-self: center;
+            align-content: center;
+            justify-content: center;
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .cerc {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            color: #007bff;
+            font-size: 18px;
+            
+        }
+        .navigare {
+            background-color: rgba(79,95,110,1);
+            color: white;
+            padding: 10px 0;
+        }
+        .nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-menu li {
+            margin: 5px 10px;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        .partners-container {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(79,95,110,1);
+    padding: 10px 0;
+}
+
+.partners-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.partners {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite; /* Controlăm viteza */
+}
+
+.partners img {
+    height: 60px;
+    margin: 0 15px;
+    
+}
+
+/* Animație infinită fără oprire */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+
+        
+        .faq-1 {
+            text-align: center;
+            color: #333;
+        }
+        .faq-2 {
+            color: #0056b3;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .faq {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .question {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .answer {
+            padding-top: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="contact-info" >
+        <div class="logo">
+            <img src="../logotip.png" alt="Temple Woods Construction Logo" onclick="window.location.href='../'" style="cursor: pointer;"> <!--Click go to home-->
+        </div>
+       
+            <div class="contact-item" onclick="window.location.href='tel:+353852303610'">
+                <div class="cerc">
+                    <span>&#9742;</span>
+                </div>
+                <div>
+                    <span>Phone:</span>
+                    <p>(+353) 852303610</p>
+                </div>
+            </div>
+            <div class="contact-item" onclick="window.location.href='mailto:templewoods2@gmail.com'">
+                <div class="cerc">
+                    <span>&#9993;</span>
+                </div>
+                <div>
+                    <span>EMAIL:</span>
+                    <p>templewoods2@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item" onclick="window.location.href=''">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+                      </svg>
+                </div>
+                <div>
+                    <span>FAQs</span>
+                    
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                      </svg>
+                </div>
+                
+            </div>
+            <div class="contact-item" onclick="window.location.href='../contact-us/'">
+                <div class="cerc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                      </svg>
+                </div>
+                <div>
+                    <span>Contact Us</span>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="navigare">
+        <button class="menu-toggle">☰ Temple Woods Construction</button>
+        <ul class="nav-menu">
+            <li><a href="../">Home</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="../services/">Services</a></li>
+            <li><a href="../helpful-information/">Helpful Information</a></li>
+            
+           
+        </ul>
+    </header>
+
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-menu").classList.toggle("active");
+        });
+    </script>
+<div class="main-content">
+    
+<div class="container">
+
+    <h1>FAQs</h1>
+
+    <h2 class="faq-2">Frequently Asked Questions Answered</h2>
+    <div class="faq">
+        <div class="question">1. Could you provide an overview of the types of home extensions you specialize in?</div>
+        <div class="answer">We specialize in single-story and multi-story extensions, including garage conversions, sunrooms, and outdoor living spaces.</div>
+    </div>
+    <div class="faq">
+        <div class="question">2. Do you build fully custom-designed homes, or do you work from pre-designed plans?</div>
+        <div class="answer">Yes, we build fully custom-designed homes based on client preferences, but we also offer a selection of pre-designed plans to fit varying budgets.</div>
+    </div>
+    <div class="faq">
+        <div class="question">3. Are your renovation services available for both residential and commercial properties?</div>
+        <div class="answer">Our renovation services cover both residential and commercial properties, including offices, retail spaces…</div>
+    </div>
+    <div class="faq">
+        <div class="question">4. Do you offer eco-friendly and energy-efficient construction solutions?</div>
+        <div class="answer">Yes, we provide eco-friendly and energy-efficient solutions, such as sustainable materials, high-performance insulation, and solar integrations.</div>
+    </div>
+    <div class="faq">
+        <div class="question">5. Do you have experience with restoring or renovating heritage homes?</div>
+        <div class="answer">We have extensive experience with heritage homes, ensuring historical integrity is preserved while modernizing utilities and functionality.</div>
+    </div>
+
+    <h2 class="faq-2">Project Process</h2>
+    <div class="faq">
+        <div class="question">6. Can you explain the steps involved in starting a project with your company?</div>
+        <div class="answer">Our process starts with an initial consultation, followed by design development, budget planning, permit acquisition, and finally, construction.</div>
+    </div>
+    <div class="faq">
+        <div class="question">7. Do you assist with obtaining necessary permits and approvals for construction or renovations?</div>
+        <div class="answer">Yes, we handle all permits and approvals on your behalf, ensuring compliance with local regulations.</div>
+    </div>
+    <div class="faq">
+        <div class="question">8. On average, how long does it take to complete a home extension or new construction project?</div>
+        <div class="answer">The timeline varies based on project scope. Home extensions typically take 2–5 months, while new homes can take 8–12 months or more.</div>
+    </div>
+    <div class="faq">
+        <div class="question">9. What level of involvement is required from me during the design and planning phases?</div>
+        <div class="answer">We involve clients at key decision points, such as finalizing designs, material selection, and budgeting.</div>
+    </div>
+    <div class="faq">
+        <div class="question">10. Are there any key preparations I should complete before the project begins?</div>
+        <div class="answer">You'll need to have a clear vision for your project and ensure access to the site for inspections and construction equipment.</div>
+    </div>
+
+    <h2 class="faq-2">Cost and Budget</h2>
+    <div class="faq">
+        <div class="question">11. Can you provide a detailed, itemized cost estimate for my project?</div>
+        <div class="answer">We provide a detailed, itemized estimate covering materials, labour, permits, and contingencies before starting the project.</div>
+    </div>
+    <div class="faq">
+        <div class="question">12. Are there any potential additional costs I should be aware of?</div>
+        <div class="answer">Additional costs might include unforeseen structural issues, upgrades to the scope, or unexpected delays due to weather.</div>
+    </div>
+    <div class="faq">
+        <div class="question">13. How do you ensure the project stays within the agreed budget?</div>
+        <div class="answer">We monitor budgets closely, keeping clients updated on costs and offering alternatives if needed.</div>
+    </div>
+    <div class="faq">
+        <div class="question">14. Do you offer financing options or flexible payment plans?</div>
+        <div class="answer">Yes, we offer flexible payment plans and can refer you to financing partners for loans if necessary.</div>
+    </div>
+    <div class="faq">
+        <div class="question">15. Could you provide a breakdown of costs for materials, labor, and other expenses?</div>
+        <div class="answer">Our estimates include a transparent breakdown of costs, and we're happy to review it with you in detail.</div>
+    </div>
+
+    <h2 class="faq-2">Experience and Credentials</h2>
+    <div class="faq">
+        <div class="question">16. How many years of experience does your company have in construction and renovations?</div>
+        <div class="answer">We bring nearly 20 years of experience in the construction industry, specializing in residential and commercial projects. Our journey started in Portugal and continued in Ireland, where we worked with an established Irish company. Following the retirement of the company's owner, TWC was founded to deliver our expertise and dedication to the Irish market.</div>
+    </div>
+    <div class="faq">
+        <div class="question">17. Can you share examples or a portfolio of projects similar to mine?</div>
+        <div class="answer">Yes, we maintain a portfolio of completed projects and can share examples relevant to your requirements.</div>
+    </div>
+    <div class="faq">
+        <div class="question">18. Do you have references from previous clients that I may contact?</div>
+        <div class="answer">We'll gladly provide client references for you to contact and learn about their experience with us.</div>
+    </div>
+    <div class="faq">
+        <div class="question">19. Is your company fully licensed and insured?</div>
+        <div class="answer">We are fully licensed and insured and can provide documentation upon request.</div>
+    </div>
+    <div class="faq">
+        <div class="question">20. What experience do you have with building smart or energy-efficient homes?</div>
+        <div class="answer">We've completed numerous energy efficient and smart homes, incorporating modern systems like automation and renewable energy.</div>
+    </div>
+
+    <h2 class="faq-2">Materials and Sustainability</h2>
+    <div class="faq">
+        <div class="question">21. Do you incorporate sustainable and environmentally friendly materials into your projects?</div>
+        <div class="answer">We use sustainable materials whenever possible, including reclaimed wood, low-VOC finishes, and energy-efficient products.</div>
+    </div>
+    <div class="faq">
+        <div class="question">22. Are you able to integrate renewable energy solutions, such as solar panels, into your designs?</div>
+        <div class="answer">Yes, we can integrate solar panels, battery storage systems, and other renewable energy solutions into your design.</div>
+    </div>
+    <div class="faq">
+        <div class="question">23. What energy-efficient features or materials would you recommend for my project?</div>
+        <div class="answer">We recommend features such as high-performance insulation, low-emissivity windows, and efficient HVAC systems to reduce energy consumption.</div>
+    </div>
+    <div class="faq">
+        <div class="question">24. Do you source materials locally to minimize environmental impact?</div>
+        <div class="answer">We source materials locally whenever possible, supporting the community and reducing transportation emissions.</div>
+    </div>
+    <div class="faq">
+        <div class="question">25. Are you comfortable working with specific materials, such as reclaimed wood or non-toxic finishes?</div>
+        <div class="answer">Yes, we are open to working with specific materials requested by clients, provided they meet safety and quality standards.</div>
+    </div>
+
+    <h2 class="faq-2">Customization and Design</h2>
+    <div class="faq">
+        <div class="question">26. Do you offer in-house design services, or do you work with external architects?</div>
+        <div class="answer">We offer in-house design services but are also happy to collaborate with external architects or designers.</div>
+    </div>
+    <div class="faq">
+        <div class="question">27. Are custom modifications to the design possible during the course of the project?</div>
+        <div class="answer">Minor modifications are usually possible, but major changes may affect the timeline and budget.</div>
+    </div>
+    <div class="faq">
+        <div class="question">28. Are there any limitations or restrictions on the types of renovations or extensions you can undertake?</div>
+        <div class="answer">We work within local regulations and advise on feasible options, but we strive to accommodate all client requests.</div>
+    </div>
+    <div class="faq">
+        <div class="question">29. How do you ensure that the new extension blends seamlessly with the existing structure?</div>
+        <div class="answer">Our team ensures seamless integration between the new extension and the existing structure through careful planning and material selection.</div>
+    </div>
+
+    <h2 class="faq-2">Project Management</h2>
+    <div class="faq">
+        <div class="question">31. Who will be managing my project, and how will I receive updates on its progress?</div>
+        <div class="answer">Your project will be managed by a dedicated project manager, who will provide regular updates and serve as your point of contact.</div>
+    </div>
+    <div class="faq">
+        <div class="question">32. What steps do you take to ensure that projects are completed on schedule?</div>
+        <div class="answer">We maintain strict schedules and adjust workflows as needed to ensure timely completion.</div>
+    </div>
+    <div class="faq">
+        <div class="question">33. How do you handle unexpected issues or delays that arise during construction?</div>
+        <div class="answer">We address delays or issues proactively, keeping clients informed and offering solutions to stay on track.</div>
+    </div>
+    <div class="faq">
+        <div class="question">34. Are you able to coordinate with architects, engineers, or interior designers if needed?</div>
+        <div class="answer">Yes, we coordinate with architects, engineers, and other professionals to ensure seamless execution.</div>
+    </div>
+    <div class="faq">
+        <div class="question">35. What safety measures do you implement on the construction site?</div>
+        <div class="answer">We implement strict safety protocols on-site, adhering to industry standards and local regulations.</div>
+    </div>
+
+    <h2 class="faq-2">Guarantees and Aftercare</h2>
+    <div class="faq">
+        <div class="question">36. Do you provide warranties or guarantees for your work and materials?</div>
+        <div class="answer">We provide warranties on our workmanship, as well as on materials where applicable.</div>
+    </div>
+    <div class="faq">
+        <div class="question">37. What is your process for addressing issues that arise after the project is completed?</div>
+        <div class="answer">If issues arise after completion, we offer prompt support and repair services to address any concerns.</div>
+    </div>
+    <div class="faq">
+        <div class="question">38. Do you offer ongoing maintenance or repair services for completed projects?</div>
+        <div class="answer">Yes, we offer maintenance packages and routine inspections to keep your property in excellent condition.</div>
+    </div>
+    <div class="faq">
+        <div class="question">39. How do you handle disputes or concerns raised during the construction process?</div>
+        <div class="answer">We aim to resolve concerns through clear communication and, if necessary, mediation to reach an agreeable solution.</div>
+    </div>
+    <div class="faq">
+        <div class="question">40. Are you available for consultations or modifications after the project is finalized?</div>
+        <div class="answer">Yes, we're available for post-completion consultations, including assistance with upgrades or modifications in the future.</div>
+    </div>
+    
+</div>
+</div>
+
+</div>
+<script>
+    let wrapper = document.querySelector('.partners');
+let isPaused = false;
+
+function moveLeft() {
+wrapper.style.animation = "none";
+wrapper.style.transform = "translateX(100%)";
+setTimeout(() => wrapper.style.animation = "scroll 10s linear infinite", 500);
+}
+
+function moveRight() {
+wrapper.style.animation = "none";
+wrapper.style.transform = "translateX(-100%)";
+setTimeout(() => wrapper.style.animation = "scroll 10s linear infinite", 500);
+}
+
+// Oprește animația la hover
+wrapper.addEventListener("mouseenter", () => {
+wrapper.style.animationPlayState = "paused";
+});
+wrapper.addEventListener("mouseleave", () => {
+wrapper.style.animationPlayState = "running";
+});
+
+</script>
+<footer class="footer">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-2">
+                <h2>Partners</h2> 
+            </div>
+        <div class="col-md-10">
+        <div class="partners-container">
+            <div class="partners-wrapper">
+                <div class="partners">
+                    <img src="../partners/phoenix1.png" onclick="window.open('https://electriccarcharger.ie/phoenix-solar-systems-pv-panels/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/phoenix2.png" onclick="window.open('https://phoenixes.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ipages.png" onclick="window.open('https://irish-pages.ie/listing/ireland/trim/plumber/cr-plumbing-heating-services', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ffs.png" onclick="window.open('https://www.fastfloorscreed.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/brooks.jpg" onclick="window.open('https://brooksonline.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/core.jpg" onclick="window.open('https://corebuild.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/chadwicks.png" onclick="window.open('https://www.chadwicks.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/timberie.png" onclick="window.open('https://www.timberireland.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/dara.png" onclick="window.open('https://www.ncompass.ie/contact', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/hogan.png" onclick="window.open('https://pickapro.ie/structural-engineer/Hogan+And+Associates', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ambacht.jpg" onclick="window.open('https://www.ambacht.ie/93c2bff520-content', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/wurth.png" onclick="window.open('https://eshop.wurth.ie/en/GB/EUR/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ecological.png" onclick="window.open('https://www.ecologicalbuildingsystems.com/?srsltid=AfmBOoq0RtcU4hC145aeT62yW8Fllw_65n60yAfnzb3g19KRLbmHhmBV', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/adwanced.png" onclick="window.open(' https://advancedwaste.ie/', '_blank');" style="cursor: pointer;">
+                    <!-- Duplicăm pentru efect de continuitate -->
+                    <img src="../partners/phoenix1.png" onclick="window.open('https://electriccarcharger.ie/phoenix-solar-systems-pv-panels/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/phoenix2.png" onclick="window.open('https://phoenixes.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ipages.png" onclick="window.open('https://irish-pages.ie/listing/ireland/trim/plumber/cr-plumbing-heating-services', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ffs.png" onclick="window.open('https://www.fastfloorscreed.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/brooks.jpg" onclick="window.open('https://brooksonline.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/core.jpg" onclick="window.open('https://corebuild.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/chadwicks.png" onclick="window.open('https://www.chadwicks.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/timberie.png" onclick="window.open('https://www.timberireland.ie/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/dara.png" onclick="window.open('https://www.ncompass.ie/contact', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/hogan.png" onclick="window.open('https://pickapro.ie/structural-engineer/Hogan+And+Associates', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ambacht.jpg" onclick="window.open('https://www.ambacht.ie/93c2bff520-content', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/wurth.png" onclick="window.open('https://eshop.wurth.ie/en/GB/EUR/', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/ecological.png" onclick="window.open('https://www.ecologicalbuildingsystems.com/?srsltid=AfmBOoq0RtcU4hC145aeT62yW8Fllw_65n60yAfnzb3g19KRLbmHhmBV', '_blank');" style="cursor: pointer;">
+                    <img src="../partners/adwanced.png" onclick="window.open(' https://advancedwaste.ie/', '_blank');" style="cursor: pointer;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <h4>&copy; 2025 Temple Woods Construction. All rights reserved.</h4>
+    </div>
+</body>
+<!-- Created By Mihai Lungu-->
+</html>
